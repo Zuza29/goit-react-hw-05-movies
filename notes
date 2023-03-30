@@ -1,0 +1,12 @@
+Navbar with home, movies -> visible at all times
+
+Homepage: trending today, list of movies from API + 'home' in navbar active
+
+After clicking a title, the user is redirected to the movie page + 'movies' in navbar active
+Underneath: cast or reviews (one is replacing the other in case of clicking)
+
+Go back button
+
+Movies: searchbar to look for a movie
+After clicking 'search', a list with movies accurate to the query appears
+The user can click - same mechanism as before
