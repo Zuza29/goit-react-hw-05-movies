@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import fetchData from 'utils/fetchData';
-import fetchParams from 'constants/fetchParams';
 
 export const MovieDetails = () => {
   const [details, setDetails] = useState([]);
@@ -17,16 +16,17 @@ export const MovieDetails = () => {
     };
     getDetails();
     console.log(details);
-  }, [id]);
+  }, [id, URL, details]);
 
   console.log(details);
   return (
     <section>
-      {details.poster_path &&
+      {details.poster_path && (
         <img
-          src={`${fetchParams.IMAGE_BASE}${details.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
           alt="Movie poster"
-        />}
+        />
+      )}
       <article>
         <h2>{details.title}</h2>
         <ul>
@@ -36,9 +36,11 @@ export const MovieDetails = () => {
           </li>
           <li>
             <h3>Genres: </h3>
-            {details.genres !== undefined && <span>{`${details.genres
-              .map(genre => genre.name)
-              .join(' / ')}`}</span>}
+            {details.genres !== undefined && (
+              <span>{`${details.genres
+                .map(genre => genre.name)
+                .join(' / ')}`}</span>
+            )}
           </li>
         </ul>
         <h3>Overview</h3>
