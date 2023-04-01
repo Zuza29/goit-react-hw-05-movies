@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import fetchData from 'utils/fetchData';
 import { Spinner } from 'components/Spinner/Spinner';
+import './Home.module.css';
 
 export const Home = () => {
   const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=16b877ef666ac997a00ad8a16d1abc88`;
