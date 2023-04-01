@@ -32,6 +32,7 @@ export const Home = () => {
       setTitles(fetchResults);
     };
     getMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

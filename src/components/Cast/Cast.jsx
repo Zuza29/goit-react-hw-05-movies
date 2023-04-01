@@ -30,6 +30,7 @@ export const Cast = () => {
       }
     };
     getCast();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
