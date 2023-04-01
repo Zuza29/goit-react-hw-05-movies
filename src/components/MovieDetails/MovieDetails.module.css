@@ -1,0 +1,102 @@
+.movieDetailsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.movieDetailsWrapper img {
+  width: 100%;
+}
+
+li::marker {
+  content: none;
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+h3,
+span,
+p {
+  font-size: 30px;
+}
+
+p {
+  text-align: center;
+}
+
+h2,
+h3 {
+  color: blueviolet;
+}
+
+.extraInfoWrapper h3 {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.extraInfoWrapper h2 {
+  text-align: center;
+  border-top: 2px solid blueviolet;
+  padding-top: 70px;
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonsWrapper button {
+  min-width: 250px;
+  height: 6vw;
+  font-size: 35px;
+  margin: 0;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.castList li {
+  text-align: center;
+  padding: 10px;
+  width: 260px;
+  margin: 0 auto;
+}
+
+.castList li img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: 50%;
+}
+
+@media screen and (max-width: 578px) {
+  .movieDetailsWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttonsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonsWrapper button {
+    min-width: 80vw;
+    height: 12vw;
+    margin: 10px;
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .buttonsWrapper button {
+    font-size: 15px;
+  }
+}

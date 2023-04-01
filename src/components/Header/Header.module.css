@@ -1,9 +1,64 @@
 nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 header {
-    
+  height: 30vw;
+  display: flex;
+  align-items: center;
+  font-size: 45px;
+  font-weight: 600;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+header button {
+  min-width: 40%;
+  min-height: 6vw;
+  font-size: 1.5rem;
+}
+
+.border {
+  border-right: 6px solid blueviolet;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 578px) {
+  nav {
+    text-align: center;
+  }
+  .nav_1 {
+    flex-direction: column;
+    text-align: center;
+    line-height: 12vw;
+    border-bottom: 3px solid blueviolet;
+    border-radius: 20px;
+    padding-bottom: 20px;
+  }
+
+  .nav_2 {
+    display: inline-block;
+  }
+
+  .nav_2 button {
+    font-size: 1rem;
+  }
+
+  header {
+    height: 60vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .nav_1 {
+    font-size: 30px;
+  }
+
+  .nav_2 button {
+    font-size: 15px;
+    width: 70%;
+    height: 12vw;
+  }
 }
