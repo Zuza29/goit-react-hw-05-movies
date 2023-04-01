@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import fetchData from 'utils/fetchData';
+import css from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const [details, setDetails] = useState([]);
@@ -15,40 +16,53 @@ export const MovieDetails = () => {
       setDetails(detailsResults);
     };
     getDetails();
-    console.log(details);
-  }, [id, URL, details]);
+  }, [URL]);
 
-  console.log(details);
   return (
-    <section>
-      {details.poster_path && (
-        <img
-          src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
-          alt="Movie poster"
-        />
-      )}
-      <article>
-        <h2>{details.title}</h2>
-        <ul>
-          <li>
-            <h3>User rating: </h3>
-            <span>{details.vote_average}</span>
-          </li>
-          <li>
-            <h3>Genres: </h3>
-            {details.genres !== undefined && (
-              <span>{`${details.genres
-                .map(genre => genre.name)
-                .join(' / ')}`}</span>
-            )}
-          </li>
-        </ul>
+    <>
+      <section className={css.movieDetailsWrapper}>
+        {details.poster_path && (
+          <img
+            src={
+              details.poster_path
+                ? `https://image.tmdb.org/t/p/w500${details.poster_path}`
+                : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+            }
+            alt={details.title}
+          />
+        )}
+        <article>
+          <h2>{details.title}</h2>
+          <ul>
+            <li>
+              <h3>User rating: </h3>
+              <span>{details.vote_average}</span>
+            </li>
+            <li>
+              <h3>Genres: </h3>
+              {details.genres !== undefined && (
+                <span>{`${details.genres
+                  .map(genre => genre.name)
+                  .join(' | ')}`}</span>
+              )}
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section className={css.extraInfoWrapper}>
         <h3>Overview</h3>
         <p>{details.overview}</p>
-      </article>
-    </section>
+        <h3>Extra information</h3>
+        <article className={css.buttonsWrapper}>
+          <Link to="cast">
+            <button type="button">Cast</button>
+          </Link>
+          <Link to="reviews">
+            <button type="button">Reviews</button>
+          </Link>
+        </article>
+        <Outlet />
+      </section>
+    </>
   );
-
-  // vote_average
-  // overview, genres, cast, reviews
 };
