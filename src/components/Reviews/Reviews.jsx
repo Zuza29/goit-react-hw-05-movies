@@ -1,10 +1,10 @@
 import fetchData from 'utils/fetchData';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Spinner } from 'components/Spinner/Spinner';
+import Spinner from 'components/Spinner/Spinner';
 import 'components/MovieDetails/MovieDetails.module.css';
 
-export const Reviews = () => {
+ const Reviews = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
@@ -50,3 +50,6 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;
+

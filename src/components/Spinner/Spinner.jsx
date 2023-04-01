@@ -2,7 +2,7 @@ import { BallTriangle } from 'react-loader-spinner';
 import React from 'react';
 import css from './Spinner.module.css';
 
-export const Spinner = () => (
+ const Spinner = () => (
   <div className={css.loaderWrapper}>
     <BallTriangle
       height={100}
@@ -17,3 +17,5 @@ export const Spinner = () => (
     />
   </div>
 );
+
+export default Spinner;

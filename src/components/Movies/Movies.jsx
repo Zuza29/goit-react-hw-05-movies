@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import fetchData from 'utils/fetchData';
 import { Link } from 'react-router-dom';
-import { Spinner } from 'components/Spinner/Spinner';
+import Spinner  from 'components/Spinner/Spinner';
 import './Movies.module.css';
 import { Notify } from 'notiflix';
-
-export const Movies = () => {
+ const Movies = () => {
   const [value, setValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [titles] = useState([]);
@@ -69,3 +68,5 @@ export const Movies = () => {
     </form>
   );
 };
+
+export default Movies;

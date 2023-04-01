@@ -3,7 +3,7 @@ import { useParams, Link, Outlet } from 'react-router-dom';
 import fetchData from 'utils/fetchData';
 import css from './MovieDetails.module.css';
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const [details, setDetails] = useState([]);
 
   const queryParams = useParams();
@@ -66,3 +66,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

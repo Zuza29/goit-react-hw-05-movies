@@ -34,3 +34,13 @@ a:hover {
 a:active {
   color: darkblue;
 }
+
+button {
+  width: 25%;
+  margin-left: 10px;
+  border: none;
+  font-size: 20px;
+  color: darkblue;
+  font-family: inherit;
+  height: 7vw;
+}

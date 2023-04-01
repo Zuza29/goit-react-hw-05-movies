@@ -1,22 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import css from './Header.module.css';
 
-export const Header = () => {
+ const Header = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <nav className={css.nav_1}>
-        <NavLink to="/">Homepage</NavLink>
+        <Link to="/">Homepage</Link>
         <div className={css.border}></div>
-        <NavLink to="/movies">Movies</NavLink>
+        <Link to="/movies">Movies</Link>
       </nav>
       <nav className={css.nav_2}>
-        <button type="button">
-          <NavLink>Go back</NavLink>
-        </button>
-        <button type="button">
-          <NavLink>Go forward</NavLink>
+        <button type="button" onClick={() => navigate(-1)}>
+            Go back
         </button>
       </nav>
     </header>
   );
 };
+
+export default Header;

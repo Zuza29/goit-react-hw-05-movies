@@ -5,19 +5,19 @@ nav {
 }
 
 header {
-  height: 30vw;
+  height: 20vw;
   display: flex;
   align-items: center;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 600;
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
 
 header button {
-  min-width: 40%;
-  min-height: 6vw;
-  font-size: 1.5rem;
+  min-width: 30%;
+  max-height: 4vw;
+  font-size: 1.2rem;
 }
 
 .border {

@@ -1,10 +1,10 @@
 import fetchData from 'utils/fetchData';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Spinner } from 'components/Spinner/Spinner';
+import Spinner from 'components/Spinner/Spinner';
 import css from 'components/MovieDetails/MovieDetails.module.css';
 
-export const Cast = () => {
+ const Cast = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [cast, setCast] = useState(null);
   const { movieId } = useParams();
@@ -64,3 +64,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;
