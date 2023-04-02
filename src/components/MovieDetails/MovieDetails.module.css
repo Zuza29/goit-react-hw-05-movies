@@ -53,6 +53,12 @@ h3 {
   height: 6vw;
   font-size: 35px;
   margin: 0;
+   border-radius: 8px;
+}
+
+.buttonsWrapper button:hover {
+  cursor: pointer;
+  background-color: darkgray;
 }
 
 .castList {
@@ -92,6 +98,7 @@ h3 {
     height: 12vw;
     margin: 10px;
     font-size: 35px;
+   
   }
 }
 

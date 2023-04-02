@@ -18,6 +18,12 @@ header button {
   min-width: 30%;
   max-height: 4vw;
   font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+header button:hover {
+  cursor: pointer;
+  background-color: darkgray;
 }
 
 .border {
@@ -44,6 +50,7 @@ header button {
 
   .nav_2 button {
     font-size: 1rem;
+    min-height: 9vw;
   }
 
   header {

@@ -8,22 +8,23 @@ const MovieDetails = lazy(() => import('../MovieDetails/MovieDetails'));
 const Movies = lazy(() => import('../Movies/Movies'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
 const Header = lazy(() => import('../Header/Header'));
-const NotFound = lazy(() => import('../NotFound/NotFound'));
 
 export const App = () => {
   return (
     <div className="wrapper">
-          <Suspense fallback={<div>Loading...</div>}>
-      <Header /></Suspense>
-      <Suspense fallback={<div>Loading...</div>}>   <Routes>
-        <Route index element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes></Suspense> 
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </div>
   );
 };
